@@ -122,12 +122,12 @@ uint8_t getFingerprintEnroll() {
   Serial.println(id);
   p = finger.createModel();
   if (p == FINGERPRINT_OK) {
-    Serial.println("Prints matched!");
+    Serial.println("Car Unlocked and Ignition Started!");
   } else if (p == FINGERPRINT_PACKETRECIEVEERR) {
     Serial.println("Communication error");
     return p;
   } else if (p == FINGERPRINT_ENROLLMISMATCH) {
-    Serial.println("Fingerprints did not match");
+    Serial.println("Incorrect key!!");
     return p;
   } else {
     Serial.println("Unknown error");
@@ -141,7 +141,7 @@ uint8_t getFingerprintEnroll() {
   if (p == FINGERPRINT_OK) {
     Serial.println("Stored!");
   } else if (p == FINGERPRINT_PACKETRECIEVEERR) {
-    Serial.println("Communication error");
+    Serial.println("Authorization  error");
     return p;
   } else if (p == FINGERPRINT_BADLOCATION) {
     Serial.println("Could not store in that location");
@@ -150,7 +150,7 @@ uint8_t getFingerprintEnroll() {
     Serial.println("Error writing to flash");
     return p;
   } else {
-    Serial.println("Unknown error");
+    Serial.println("Undefined error");
     return p;
   }
 }
