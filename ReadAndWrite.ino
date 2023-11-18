@@ -69,7 +69,7 @@ lcd.print("Access Granted");
 else
 {
   Serial.print("\n");
-  Serial.println("Access Denied");
+  Serial.println("Access Denied!");
   Serial.print("\n");
   delay(1000);
 }
